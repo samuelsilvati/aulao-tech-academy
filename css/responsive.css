@@ -1,4 +1,5 @@
 @media (max-width: 1000px) {
+    
     main .container-main div {
         margin: auto;
     }
@@ -7,15 +8,16 @@
         display: none;
     }
 
-    h2 {
+    .container-main h2 {
         margin-left: 50px;
     }
 
-    div h3 {
+    .container-main div h3 {
         margin-left: 50px;
+        margin-right: 20px;
     }
 
-    form {
+    .container-main form {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -24,9 +26,18 @@
         text-align: center;
     }
 
-    input {
+    .container-main input {
         margin: 12px;
     }
+
+    .container-main form {
+        padding: 30px;
+    }
+
+    #contact-form {
+        margin: 0px 30px;
+    }
+
 }
 
 @media (max-width: 1000px) {
@@ -36,11 +47,58 @@
 }
 
 @media(max-width: 630px) {
-    nav {
-        display: none;
+
+    .menu-button-container {
+        display: flex;
     }
+
+    .menu {
+        position: absolute;
+        margin-top: 41px;
+        flex-direction: column;
+        width: 100vw;
+        justify-content: center;
+        align-items: center;
+        left: 100%;
+        transform: translateX(100vw);
+        transition: 0.5s ease transform;
+    }
+
+    .menu > li {
+        display: flex;
+        justify-content: center;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        color: white;
+        background-color: #0080ed;
+        border-radius: 5px;
+    }
+
+    .menu > li:not(:last-child) {
+        border-bottom: 1px solid white;
+    }
+
+    .menu li a {
+        flex: 1;
+        text-align: center;
+    }
+
     main .container-menu img {
         display: none;
+    }
+
+    .container-main input {
+        margin: 12px;
+        width: 300px !important;
+    }
+
+    .container-main form [type="submit"] {
+        width: 150px !important;
+    }
+
+    .container-main form {
+        padding: 30px;
     }
     .container-menu {
         height: 100%;
@@ -50,12 +108,7 @@
         justify-content: center;
     }
 
-    #checkbox-menu {
-        position: absolute;
-        opacity: 0;
-    }
-
-    label{
+    .container-menu label {
         cursor: pointer;
         position: relative;
         display: block;
@@ -63,7 +116,7 @@
         width: 30px;
     }
 
-    label span {
+    .container-menu label span {
         position: absolute;
         display: block;
         height: 5px;
@@ -74,15 +127,15 @@
         transition: 0.2s ease-in-out;
     }
 
-    label span:nth-child(1) {
+    .container-menu label span:nth-child(1) {
         top: 0;
     }
 
-    label span:nth-child(2) {
+    .container-menu label span:nth-child(2) {
         top: 8px;
     }
 
-    label span:nth-child(3) {
+    .container-menu label span:nth-child(3) {
         top: 16px;
     }
 
@@ -99,4 +152,22 @@
         transform: rotate(45deg);
         top: 8px;
     }
+
+    #contact-form {
+        margin: 0px 30px;
+    }
+
+    #contact-button {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+nav.menu {
+    width: 100%;
+}
+
+#checkbox-menu:checked~nav .menu {
+    transform: translatex(-100vw);
+    transition: 0.5s ease transform;
 }
